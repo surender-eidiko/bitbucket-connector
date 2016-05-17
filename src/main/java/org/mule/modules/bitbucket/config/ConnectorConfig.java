@@ -12,13 +12,13 @@ public class ConnectorConfig {
 
 	@Configurable
 	  @Optional
-	  @Default("https://api.bitbucket.org/2.0/repositories/rakesh_t/test")
-	  private String url = "https://api.bitbucket.org/2.0/repositories/rakesh_t/test";
+	  @Default("https://api.bitbucket.org/2.0")
+	  private String url = "https://api.bitbucket.org/2.0";
 
 	  @Configurable
 	  @Optional
 	  @RestHeaderParam("Authorization")
-	  private String authorization = "Bearer 6-UdWWgUlm934Zjk88-9XbYTsMYTZ_dVlqFlevhFCsaOxLVMzpEpB97Rfv2Spr1gXTLkx-Z1d54i0553RQ==";
+	  private String authorization = "Bearer Xt3jbn6i6cbWAzpa4IwuzAZOCHRYQwzifS-67VqUT0iubu7RUKu7Pyx-4sM1fesvoGEcYjPbARQEXdZKGLI=";
 
 	  public String getUrl() {
 	    return url;
