@@ -1,6 +1,6 @@
 package org.mule.modules.bitbucket.bean;
 
-public class CreateWebhookPostResponse {
+public class CreateWebhookPostResponse extends StatusResponse {
 
 	private String read_only;
 

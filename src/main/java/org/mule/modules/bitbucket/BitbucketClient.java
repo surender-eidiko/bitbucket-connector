@@ -44,8 +44,11 @@ public class BitbucketClient {
 	}
 
 	public CreateWebhookPostResponse createWebHook(
-		    CreateWebhookPostRequest webhookPostRequest,String owner,String repositoryName) {
-		    WebResource webResource = getApiResource().path("repositories").path(owner).path(repositoryName).path("hooks");
+			CreateWebhookPostRequest webhookPostRequest,String owner,String repositoryName) {
+		   System.out.println("test");
+			WebResource webResource = getApiResource().path("repositories").path(owner).path(repositoryName).path("hooks");
+			System.out.println("test3"+webResource);
+			log.info("Hitting... "+webResource.toString());
 		    return (CreateWebhookPostResponse) postData(webhookPostRequest,
 		      webResource, CreateWebhookPostResponse.class);
 		  }

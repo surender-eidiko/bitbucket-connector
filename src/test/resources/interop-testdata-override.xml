@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connector name="Bitbucket">
+    <properties>
+        <connectivity-support>false</connectivity-support>
+        <OAuth-authentication>false</OAuth-authentication>
+        <metadata>static</metadata>
+        <datasense-enabled>true</datasense-enabled>
+        <transformer>false</transformer>
+    </properties>
+    <global-config credentialsFile="">
+        <config name="config">
+            <attributes>
+                <attribute name="name" use="required" caption="Name" group="Basic Settings" type="name" javaType="java.lang.String" category="General"></attribute>
+            </attributes>
+        </config>
+    </global-config>
+    <message-processors>
+        <processor name="createWebHook" xmlName="create-web-hook" caption="Create web hook">
+            <properties>
+                <datamapper input="CreateWebhookPostResponse" output=""/>
+                <auto-paging>false</auto-paging>
+                <query-support>false</query-support>
+            </properties>
+            <attributes>
+                <attribute name="owner" use="required" caption="Owner" group="General" type="string" javaType="java.lang.String" category="General"></attribute>
+                <attribute name="repositoryName" use="required" caption="Repository Name" group="General" type="string" javaType="java.lang.String" category="General"></attribute>
+            </attributes>
+            <childElements>
+                <childElement name="webhook-post-request" use="required" group="General" category="General">
+                    <attributes>
+                        <controller caption="Define attributes" controlled="complex" controllerType="radioBoolean">
+                            <attributes>
+<attribute name="events-ref" use="optional" caption="Events Reference" type="string" javaType="java.lang.String[]" base="webhook-post-request" category="General"></attribute>
+<attribute name="description" use="optional" caption="Description" type="string" javaType="java.lang.String" base="webhook-post-request" category="General"></attribute>
+<attribute name="active" use="optional" caption="Active" type="string" javaType="java.lang.String" base="webhook-post-request" category="General"></attribute>
+<attribute name="ref" use="optional" caption="Webhook Post Request Reference" type="string" javaType="java.lang.String" base="webhook-post-request" category="General"></attribute>
+                            </attributes>
+                        </controller>
+                        <controller caption="Reference or expression" controlled="useReference" controllerType="radioBoolean">
+                            <attributes>
+<attribute name="ref" use="optional" caption="Webhook Post Request Reference" type="string" javaType="java.lang.String" category="General"></attribute>
+                            </attributes>
+                        </controller>
+                    </attributes>
+                    <childElements/>
+                </childElement>
+            </childElements>
+        </processor>
+    </message-processors>
+</connector>
