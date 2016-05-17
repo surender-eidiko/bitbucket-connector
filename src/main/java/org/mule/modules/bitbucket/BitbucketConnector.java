@@ -18,8 +18,8 @@ public class BitbucketConnector {
     
     @Processor
     public CreateWebhookPostResponse createWebHook(
-      CreateWebhookPostRequest webhookPostRequest) {
-      return getClient().createWebHook(webhookPostRequest);
+      CreateWebhookPostRequest webhookPostRequest, String owner,String repositoryName) {
+      return getClient().createWebHook(webhookPostRequest,owner,repositoryName);
     }
 
 
