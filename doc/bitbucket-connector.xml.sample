@@ -1,3 +1,9 @@
 <!-- BEGIN_INCLUDE(bitbucket:greet) -->
     <bitbucket:greet config-ref="" friend="#[map-payload:friend]" />
 <!-- END_INCLUDE(bitbucket:greet) -->
+
+<!-- BEGIN_INCLUDE(bitbucket:create-web-hook) -->
+    <bitbucket:create-web-hook config-ref="Bitbucket__Configuration" owner="rakesh" repositoryName="Test" doc:name="Bitbucket">
+            <bitbucket:webhook-post-request active="true"/>
+        </bitbucket:create-web-hook>
+<!-- END_INCLUDE(bitbucket:create-web-hook) -->
